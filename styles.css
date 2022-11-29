@@ -1,0 +1,466 @@
+@charset "UTF-8";
+/*reset*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+    --main-color1: #C5D9CA;
+    --link-color: #728C78;
+    --link-color-hover: #8C6466;
+    --errors-color: darkred;
+    --input-boreder: #eee;
+    --item-description-color: #fff;
+    --item-title-color: #8C6466;
+    --footer-color: #fff;
+    --btn-color: #506967;
+    --btn-color-hover: #aaa;
+  }
+/*reset*/
+
+/*common*/
+html {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, serif;
+    font-size: 12pt;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+h1, h2, h3, h4 {
+    font-family: Arial, sans-serif;
+}
+h1, h2 {
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 0px;
+    padding: 20px;
+    font-size: 38pt;
+    text-align: center;
+}
+
+h2 {
+    font-size: 24pt;
+    margin: 0 0 20px 0;
+}
+
+h3 {
+    font-size: 18pt;
+}
+
+h4 {
+    font-size: 14pt;
+}
+
+h5 {
+    font-size: 12pt;
+    margin: 10px 0px 10px 0px;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--link-color-hover);
+    text-decoration: none;
+}
+/*common*/
+
+/*header*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--main-color1);
+}
+
+header a {
+    color: #4b4b4b;
+    font-weight: 900;
+}
+
+header .logo {
+    max-width: 250px;
+}
+
+.logo img {
+    width: 100%;
+}
+/*header*/
+
+/*content*/
+.content, header {
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.content {
+    flex: 1 0 auto;
+}
+/*content*/
+
+/*categories*/
+.categories-wr h2 {
+    margin: 0 0 20px 0;
+}
+
+#categories {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 26px 0;
+}
+
+#categories a {
+    font-size: 16pt;
+}
+
+#categories h3 {
+    margin: 0 10px;
+}
+/*categories*/
+
+/*gallery*/
+#gallery img {
+    text-align: center;
+    width: 100px;
+}
+
+#gallery-item {
+    display: flex;
+    justify-content: center;
+}
+
+#gallery-item img {
+    display: block;
+    margin: 10px;
+}
+/*gallery*/
+
+/*paginator*/
+#paginator {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#paginator a, #paginator span {
+    display: block;
+    font-size: 20pt;
+    margin: 2pt;
+    padding: 5pt 10pt;
+}
+
+/*paginator*/
+
+/*form*/
+#filter_form {
+    float: right;
+    margin-top: 30px;
+}
+
+form.bigform {
+    width: 400px;
+    padding: 10px 20px;
+    overflow: hidden;
+}
+
+form.bigform label {
+    display: block;
+}
+
+form.bigform input, form.bigform select, form.bigform textarea {
+    display: block;
+    margin-bottom: 10px;
+}
+
+form.bigform .field input {
+    display: inline;
+}
+
+form.bigform textarea {
+    width: calc(100% - 5px - 2 * 1px);
+    height: 8em;
+}
+
+form.bigform input[type=submit] {
+    float:right;
+}
+
+.error {
+    color: var(--errors-color);
+    font-weight: bold;
+    margin: -8px 0px 10px 0px;
+    font-size: 16px;
+}
+
+input {
+    padding: 8px;
+    margin:10px 0;
+}
+
+input {
+    border: 2px solid var(--input-boreder);
+}
+
+input[type="submit"] {
+    border: none;
+    outline: none;
+}
+
+input[type="submit"]:hover {
+    background-color: #aaa;
+}
+/*form*/
+
+/*logged*/
+section#logged {
+    display: flex;
+    justify-content: flex-end;
+}
+
+section#logged a {
+    display: block;
+    margin: 10px;
+    font-size: 16px;
+}
+/*logged*/
+
+/*gallery*/
+#gallery {
+    width: 100%;
+    justify-content: flex-start;;
+    column-count: 4;
+    column-gap: 20px;
+}
+
+#gallery .item {
+    min-height: 250px;
+    position: relative;
+    overflow: hidden;
+    max-width: 450px;
+}
+
+#gallery .item > a {
+    display: inline-block;
+    margin: auto;
+}
+
+#gallery .item img {
+    width: 100%;
+    height: auto;
+}
+
+#gallery .item-description {
+    position: absolute;
+    background: var(--item-description-color);
+    color: #000;
+    width: 100%;
+    left: 0%;
+    bottom: 0%;
+    padding: 5px 10px;
+    transform: translate(0%, 120%);
+    transition: 200ms cubic-bezier(0, 0, 0.2, 1.0);
+    user-select: none;
+}
+
+#gallery .item h4, #gallery .item-date {
+    padding: 2px 0;
+}
+
+#gallery .item-date {
+    font-size: 14px;
+}
+
+#gallery .item:hover > .item-description {
+    transform: translate(0%, 0%);
+}
+
+#gallery .item-title h3 {
+    font-size: 16px;
+    padding: 4px 0;
+    color: var(--item-title-color); 
+}
+/*gallery*/
+
+/*picture page*/
+.item-content .item-description {
+    margin: 20px 0;
+    line-height: 1.5;
+}
+/*picture page*/
+
+/*footer*/
+footer {
+    padding: 20px 20px;
+    color: var(--footer-color);
+    flex: 0 0 auto;
+    background-color: var(--main-color1);
+}
+
+#copyright {
+    text-align: right;
+}
+/*footer*/
+
+/*btns*/
+.back-btn {
+    margin: 5px 0;
+}
+
+.action-btn {
+    margin: 10px 0;
+}
+
+.item-description .action-btn {
+    display: inline-block;
+}
+
+.action-btn a {
+    padding: 8px 12px;
+    background-color: var(--main-color1);
+    color: #000;
+}
+
+.action-btn a:hover {
+    color: var(--btn-color-hover);
+}
+/*btns*/
